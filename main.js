@@ -13,50 +13,50 @@ const forcaSenha = document.querySelector('.forca');
 botoes[0].onclick = diminuiTamanho;
 botoes[1].onclick = aumentaTamanho;
 
-function diminuiTamanho(){
-    if(tamanhoSenha > 1){
+function diminuiTamanho() {
+    if (tamanhoSenha > 1) {
         tamanhoSenha = tamanhoSenha - 1;
     }
-    numeroSenha.textContent=tamanhoSenha;
+    numeroSenha.textContent = tamanhoSenha;
     geraSenha();
 }
 
-function aumentaTamanho(){
-    if(tamanhoSenha < 20){
+function aumentaTamanho() {
+    if (tamanhoSenha < 20) {
         tamanhoSenha = tamanhoSenha + 1;
     }
-    numeroSenha.textContent=tamanhoSenha
+    numeroSenha.textContent = tamanhoSenha
     geraSenha();
 }
 
-for (i=0; i<checkbox.length; i++){
+for (i = 0; i < checkbox.length; i++) {
     checkbox[i].onclick = geraSenha;
 }
 
 
 geraSenha();
 
-function geraSenha(){
+function geraSenha() {
     let alfabeto = '';
-    if (checkbox[0].checked){
+    if (checkbox[0].checked) {
         alfabeto = alfabeto + letrasMinusculas;
     }
 
-    if (checkbox[1].checked){
+    if (checkbox[1].checked) {
         alfabeto = alfabeto + letrasMinusculas;
     }
 
-     if (checkbox[2].checked){
+    if (checkbox[2].checked) {
         alfabeto = alfabeto + numeros;
     }
 
-     if (checkbox[3].checked){
+    if (checkbox[3].checked) {
         alfabeto = alfabeto + simbolo;
     }
 
     let senha = '';
-    for (let i=0; i<tamanhoSenha; i++) {
-        let numeroAleatorio = Math.random()* alfabeto.length;
+    for (let i = 0; i < tamanhoSenha; i++) {
+        let numeroAleatorio = Math.random() * alfabeto.length;
         numeroAleatorio = Math.floor(numeroAleatorio);
         senha = senha + alfabeto[numeroAleatorio]
     }
